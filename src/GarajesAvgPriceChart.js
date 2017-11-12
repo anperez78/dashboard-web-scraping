@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-var LineChart = require("react-chartjs").Line;
 var _ = require('lodash');
 var moment = require('moment');
+import {Line} from 'react-chartjs-2';
+
 
 export default class GarajesAvgPriceChart extends Component {
 
@@ -88,26 +89,26 @@ export default class GarajesAvgPriceChart extends Component {
 	    	datasets: [
 	    		{
 	    			label: "Garajes Tossa",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'green',
 	    			data: garajesTossaAvgPrice
 					},
 					{
 	    			label: "Garajes Rubi",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'blue',
 	    			data: garajesRubiAvgPrice
 					},
 					{
 	    			label: "Garajes Ripollet",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'red',
 	    			data: garajesRipolletAvgPrice
 					},
 					{
 	    			label: "Garajes Barcelona",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'purple',
 	    			data: garajesBarcelonaAvgPrice
 					}
 				]
@@ -115,6 +116,13 @@ export default class GarajesAvgPriceChart extends Component {
 
 		}
 
-    return <LineChart data={this.chartData} options={this.chartOptions} width="600" height="400"/>
+		return  <Line
+          data={this.chartData}
+        	width={600}
+        	height={400}
+        	options={{
+        		maintainAspectRatio: false
+        	}}
+      />
   }
 };

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-var LineChart = require("react-chartjs").Line;
 var _ = require('lodash');
 var moment = require('moment');
+import {Line} from 'react-chartjs-2';
+
 
 export default class PisosAvgPriceChart extends Component {
 
@@ -90,26 +91,26 @@ export default class PisosAvgPriceChart extends Component {
 	    	datasets: [
 	    		{
 	    			label: "pisos Tossa",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'green',
 	    			data: pisosTossaAvgPrice
 					},
 					{
 	    			label: "pisos Rubi",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'blue',
 	    			data: pisosRubiAvgPrice
 					},
 					{
 	    			label: "pisos Ripollet",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'red',
 	    			data: pisosRipolletAvgPrice
 					},
 					{
 	    			label: "pisos Barcelona",
-						fillColor: "rgba(256,256,256,0.1)",
-						pointColor: "rgba(220,220,220,1)",
+						fill: false,
+						borderColor: 'purple',
 	    			data: pisosBarcelonaAvgPrice
 					}
 				]
@@ -117,6 +118,13 @@ export default class PisosAvgPriceChart extends Component {
 
 		}
 
-    return <LineChart data={this.chartData} options={this.chartOptions} width="600" height="400"/>
+		return  <Line
+					data={this.chartData}
+					width={600}
+					height={400}
+					options={{
+						maintainAspectRatio: false
+					}}
+			/>
   }
 };

@@ -30,9 +30,6 @@ class HomeScreen extends Component {
             </ul>
           </div>
         </div>
-
-
-
       </div>
     );
   }
