@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 75px;
+  padding: 20px;
+  color: white;
+}
+
+.marginTop {
+  margin-top: 20px;
+}
+
+.main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.leftSide {
+  width: 75%;
+  float: left;
+}
+
+.rightSide {
+  margin-left: 75%;
+  text-align: left;
+}

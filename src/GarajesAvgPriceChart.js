@@ -24,7 +24,7 @@ export default class GarajesAvgPriceChart extends Component {
  	}
 
 	garajesTossaData() {
-		fetch('http://localhost:8080/garajes/tossa-de-mar-girona')
+		fetch('http://localhost:8080/garajes/tossa-de-mar-girona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -34,7 +34,7 @@ export default class GarajesAvgPriceChart extends Component {
 	}
 
 	garajesRubiData() {
-		fetch('http://localhost:8080/garajes/rubi-barcelona')
+		fetch('http://localhost:8080/garajes/rubi-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -44,7 +44,7 @@ export default class GarajesAvgPriceChart extends Component {
 	}
 
 	garajesRipolletData() {
-		fetch('http://localhost:8080/garajes/ripollet-barcelona')
+		fetch('http://localhost:8080/garajes/ripollet-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -54,7 +54,7 @@ export default class GarajesAvgPriceChart extends Component {
 	}
 
 	garajesBarcelonaData() {
-		fetch('http://localhost:8080/garajes/barcelona-barcelona')
+		fetch('http://localhost:8080/garajes/barcelona-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -77,8 +77,6 @@ export default class GarajesAvgPriceChart extends Component {
 		if (_.isEqual(garajesTossaLabels, garajesRubiLabels) &&
 				_.isEqual(garajesRubiLabels, garajesRipolletLabels) &&
 			  _.isEqual(garajesRipolletLabels, garajesBarcelonaLabels)) {
-
-			console.log('labels are OK');
 
 			const garajesTossaAvgPrice = _.map(this.state.garajesTossaData, "avgPrice");
 			const garajesRubiAvgPrice = _.map(this.state.garajesRubiData, "avgPrice");

@@ -24,7 +24,7 @@ export default class PisosAvgPriceChart extends Component {
  	}
 
 	pisosTossaData() {
-		fetch('http://localhost:8080/pisos/tossa-de-mar-girona')
+		fetch('http://localhost:8080/pisos/tossa-de-mar-girona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -34,7 +34,7 @@ export default class PisosAvgPriceChart extends Component {
 	}
 
 	pisosRubiData() {
-		fetch('http://localhost:8080/pisos/rubi-barcelona')
+		fetch('http://localhost:8080/pisos/rubi-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -44,7 +44,7 @@ export default class PisosAvgPriceChart extends Component {
 	}
 
 	pisosRipolletData() {
-		fetch('http://localhost:8080/pisos/ripollet-barcelona')
+		fetch('http://localhost:8080/pisos/ripollet-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
@@ -54,7 +54,7 @@ export default class PisosAvgPriceChart extends Component {
 	}
 
 	pisosBarcelonaData() {
-		fetch('http://localhost:8080/pisos/barcelona-barcelona')
+		fetch('http://localhost:8080/pisos/barcelona-barcelona/aggregate')
     .then((result) => {
 			return result.json();
     })
